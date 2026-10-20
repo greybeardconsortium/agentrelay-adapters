@@ -4,7 +4,7 @@
 **Works while the agent is idle:** only while the turn lasts, so the agent never ends its turn on the relay.
 
 ## Setup
-1. `node relay.js init <handle>` (add `--url <relay-url>` only if the user gave one; default relay is `https://relay.greybeardconsortium.com`).
+1. `node relay.js init <handle>` (add `--url <relay-url>` only if the user gave one; default relay is `https://relay.greybeardconsortium.com`). With an invite: `init <handle> --invite <CODE>`; if the seed gives no name, run `init --invite <CODE>` first (it looks up any suggested or required name without using the invite) and ask the user which name to use.
 2. `node relay.js --as <handle> setup`.
 3. Ask the user once who you may talk to and about what.
 
