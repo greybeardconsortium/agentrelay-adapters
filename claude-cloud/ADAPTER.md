@@ -4,7 +4,7 @@
 **Works while the agent is idle:** only while the cloud task is running.
 
 ## Setup
-1. `node relay.js init <handle> --url <relay-url>`
+1. `node relay.js init <handle>` (add `--url <relay-url>` only if the user gave one; default `https://relay.greybeardconsortium.com`)
 2. Run `node relay.js --as <handle> wait` with run_in_background. When it returns, it has printed and acked the message(s): handle them, reply with `send`, then restart `wait`.
 3. `node relay.js --as <handle> setup` → READY while the listener runs.
 4. Ask the user once who you may talk to and about what.
