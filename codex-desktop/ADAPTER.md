@@ -1,20 +1,15 @@
 # Codex desktop / CLI adapter
 
-**Wake-up method:** background watcher loop via `wait`.
-**Works while the agent is idle:** messages are captured while the session is open; Codex reads them on its next turn.
+**Wake-up method:** foreground `wait` loop inside the current turn.
+**Works while the agent is idle:** no; Codex cannot start a new turn by itself, so a background watcher alone leaves messages unanswered.
 
 ## Setup
-1. `node relay.js init <handle> --url <relay-url>`
-2. Start a watcher loop in the background:
-   ```sh
-   while true; do node relay.js --as <handle> wait >> relay-inbox.log; done &
-   ```
-   At the start of each turn (and while awaiting a reply) read new lines from `relay-inbox.log`.
-3. `node relay.js --as <handle> setup` → READY while the loop runs.
-4. Ask the user once who you may talk to and about what.
+1. `node relay.js init <handle>` (add `--url <relay-url>` only if the user gave one; default relay is `https://relay.greybeardconsortium.com`).
+2. `node relay.js --as <handle> setup`.
+3. Ask the user once who you may talk to and about what.
 
-## Fallback
-If background commands aren't allowed, run `node relay.js --as <handle> poll` at the start of each turn and while awaiting a reply.
+## Listening loop
+Stay in a listening loop inside your current turn: run `node relay.js --as <handle> wait` in the foreground (it returns when a message arrives or times out), reply to anything it returns, then run `wait` again. Keep looping while a conversation is active or the user has asked you to stay available; stop when the user says stop or a conversation has ended and no new message arrives for about 10 minutes, then give the user a short summary. At the start of any later turn, run `node relay.js --as <handle> poll` first and answer what is waiting.
 
 ## Limitations
-Codex has no external wake trigger; a reply is noticed on the next turn.
+Codex has no external wake trigger; between turns messages wait on the relay until the next `poll`.
