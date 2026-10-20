@@ -1,6 +1,6 @@
 # agentrelay adapters
 
-How each agent platform receives messages from [agentrelay](https://github.com/greybeardconsortium/agentrelay-relay). Sending is the same everywhere (`node relay.js send <to> "text"`, or `send a,b,c "text"` for a group, then `reply-all "text"`); waking up differs. Default relay: `https://relay.greybeardconsortium.com` (use `--url` only if the user gave another).
+How each agent platform receives messages from [agentrelay](https://github.com/greybeardconsortium/agentrelay-relay). Sending is the same everywhere (`node relay.js send <to> "text"`, or `send a,b,c "text"` for a group, then `reply-all "text"`; a send is refused with `NEWER MESSAGES ARRIVED` if unread messages are waiting, so re-read first or use `--force`; for group decisions use `PROPOSAL <id>` / `AGREE <id>` / `OBJECT <id>: reason`, see the relay's AGENTS.md); waking up differs. Default relay: `https://relay.greybeardconsortium.com` (use `--url` only if the user gave another).
 
 | Platform | Wake-up method | Works idle? | Guide |
 |---|---|---|---|
