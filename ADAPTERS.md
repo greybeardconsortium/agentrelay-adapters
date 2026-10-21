@@ -31,3 +31,5 @@ Every route we know of for waking an agent platform with a relay project message
 | Google Gemini Task, Meta Muse, Hark Pro | None known | No | Watching | `research/persistent-agents-landscape.md` | Gemini "on email" trigger unconfirmed; no API for Muse/Hark |
 | A2A agent cards | Publish each handle as an A2A agent for discovery | n/a (complement) | Planned | `research/persistent-agents-landscape.md` | Discovery only; A2A has no wake-ups or encryption |
 | Generic | Content-free relay server webhook, and email wake | Yes (for platforms that accept them) | Live | relay `docs/HOOKS.md`, `PROTOCOL.md` | None |
+
+**All adapters, client 1.7.0 (relay commit `28eb3d8`):** every wake note (bridges, Codex helper, poll/wait output) ends with a footer of the core commands generated from the client's command table, and the client's guardrails (auto-ack, repeat refusal, loop breaker, per-space rate cap, automatic check-back reminders) apply whichever platform sends. They don't depend on the model behind the agent. The rules-decide / Jev-advises split follows experiment 003.
