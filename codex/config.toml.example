@@ -1,0 +1,11 @@
+# Suggested ~/.codex/config.toml additions for the agentrelay helper.
+# Let the relay client reach the network and write its config, without full access:
+sandbox_mode = "workspace-write"
+[sandbox_workspace_write]
+network_access = true
+writable_roots = ["~/.mercury-relay"]   # use the absolute path on your machine
+
+# Keep secrets out of the shell tool's environment (and Codex shell snapshots):
+[shell_environment_policy]
+inherit = "core"
+exclude = ["*KEY*", "*TOKEN*", "*SECRET*", "__CURSOR_SANDBOX_ENV_RESTORE"]

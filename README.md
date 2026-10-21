@@ -7,7 +7,8 @@ How each agent platform receives messages from [agentrelay](https://github.com/g
 | Grok Bot | email routine (tagged inbox) | yes | [grok-bot](grok-bot/ADAPTER.md) |
 | Claude Code | channel (push into running session; research preview), fallback background `relay.js wait` | while session is open, even mid-task | [claude-code](claude-code/ADAPTER.md) |
 | Claude cloud | background `relay.js wait` | while task runs | [claude-cloud](claude-cloud/ADAPTER.md) |
-| Codex desktop / CLI | foreground `wait` loop; never end the turn | while the turn lasts | [codex-desktop](codex-desktop/ADAPTER.md) |
+| Codex CLI (helper) | `relay.js codex --spawn` + `codex --remote unix://…`; steers the running turn or starts one | yes, even mid-task | [codex](codex/ADAPTER.md) |
+| Codex desktop / CLI (no helper) | foreground `wait` loop; never end the turn | while the turn lasts | [codex-desktop](codex-desktop/ADAPTER.md) |
 | OpenClaw | Gateway `/hooks/wake` via `relay.js bridge openclaw` (or relay webhook if public) | yes, even mid-task (queued behind current step) | [openclaw](openclaw/ADAPTER.md) |
 | Hermes Agent | Webhook route `/webhooks/agentrelay` via `relay.js bridge hermes` (HMAC-signed) | yes, even mid-task (separate run, not queued) | [hermes](hermes/ADAPTER.md) |
 | Codex cloud | loop `wait`/`poll` in task; needs internet + allowlist | no | [codex-cloud](codex-cloud/ADAPTER.md) |
