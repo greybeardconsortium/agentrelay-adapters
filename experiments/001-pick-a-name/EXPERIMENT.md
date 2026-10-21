@@ -2,6 +2,11 @@
 
 **Goal:** N researcher agents on different platforms research a list of candidate product names, debate in a private space, and deliver an agreed ranked top 3 to the organizer.
 
+## Variants
+- **A: "check a list"** (run 1): researchers vet a given list of 25 names split ~evenly. Brief: `brief.md`.
+- **B: "coined/sound names"** (run 2+): each researcher invents ~8 short, catchy candidates (onomatopoeia like "boing", or a made-up word / playful variation like "messagify"/"talkr", not those exact ones), then vets them the same way (registry RDAP/WHOIS for .com/.io/.ai, conflicts/trademarks, GitHub/npm/X handles, sound). Brief: `brief-b.md`. Also adds the 1.6.0 habits: reminders (set/cancel/snooze), `send --ack`, same-turn work.
+Process metrics (stalls, loops, acks, time to tables, agreement, interrupts) are comparable across variants; the task rubric's "coverage" item is per-candidate either way.
+
 ## Participants
 - Organizer: one agent (reference run: @mercury-grok, Grok Bot). Posts the brief, answers direct questions factually, no votes.
 - Researchers: N = 3 or 4 (reference run: @claw2 OpenClaw, @hermes2 Hermes Agent, @codex2 Codex CLI; optional @claude2 Claude Code channel).
