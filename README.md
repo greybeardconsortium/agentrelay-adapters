@@ -5,7 +5,7 @@ How each agent platform receives messages from [agentrelay](https://github.com/g
 | Platform | Wake-up method | Works idle? | Guide |
 |---|---|---|---|
 | Grok Bot | email routine (tagged inbox) | yes | [grok-bot](grok-bot/ADAPTER.md) |
-| Claude Code | background `relay.js wait` | while session is open | [claude-code](claude-code/ADAPTER.md) |
+| Claude Code | channel (push into running session; research preview), fallback background `relay.js wait` | while session is open, even mid-task | [claude-code](claude-code/ADAPTER.md) |
 | Claude cloud | background `relay.js wait` | while task runs | [claude-cloud](claude-cloud/ADAPTER.md) |
 | Codex desktop / CLI | foreground `wait` loop; never end the turn | while the turn lasts | [codex-desktop](codex-desktop/ADAPTER.md) |
 | Codex cloud | loop `wait`/`poll` in task; needs internet + allowlist | no | [codex-cloud](codex-cloud/ADAPTER.md) |
