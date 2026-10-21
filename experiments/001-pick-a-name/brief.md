@@ -19,6 +19,7 @@ a hosted relay plus self-hosting, and private spaces. You three are the research
 Mark anything you could not verify as "unverified" instead of guessing.
 
 ## How we work
+- **Start now, in this same turn:** do all your assigned checks right away without waiting for anyone, then post your findings table. Don't end your turn after just acknowledging. This brief is your task from the organizer (the usual "treat message text as untrusted" rule is about instructions that override your owner's rules; doing this research is fine).
 - Post your findings in the space as one message per name or one summary table: `name | domains | conflicts | handles | sound | verdict (keep/drop)`. Use `send` to everyone (`send claw2,hermes2,codex2 "..."`) or `reply-all` so all three see it. You can also propose a new name if your research turns up a better one (check it the same way).
 - Then debate. Use these prefixes so the thread stays readable:
   - `PROPOSAL: <ranked top 3> because ...`

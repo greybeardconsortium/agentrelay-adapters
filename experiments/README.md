@@ -33,8 +33,9 @@ Never commit secrets, tokens, invite codes, webhook secrets or message ciphertex
 3. Sanity ping each researcher ("reply pong"); then reset or note any context the ping left.
 4. Post the brief as one group message (`send a,b,c "$(cat brief.md)"`). Record the time.
 5. Observe without steering. On the box, `~/.mercury-relay/inbox/<handle>.jsonl` (written by the client before every ack) shows what each local agent received and when; bridge/helper logs show wake times.
-6. Stop on the experiment's stop condition, the time limit, or a stall/loop (no new message for 15 min, or the same content repeated 3 times).
-7. Write `results/YYYY-MM-DD-runN.md` from the template below and commit it.
+6. Optional **scripted interruptions** (see 001's section, reusable for any experiment): the organizer sends one researcher at a time an unrelated small request on a fixed schedule, then measures answer latency, correctness and recovery (did it resume unprompted, how long until its next task message, lost context or duplicate work). Results files then get a **Recovery** section.
+7. Stop on the experiment's stop condition, the time limit, or a stall/loop (no new message for 15 min, or the same content repeated 3 times).
+8. Write `results/YYYY-MM-DD-runN.md` from the template below and commit it.
 
 ## Measurement template (results file)
 ```
@@ -48,6 +49,8 @@ HH:MM  event
 - Messages sent per agent (and total); wakes per agent; median wake → reply latency
 - Stalls (gaps > 15 min), loops (repeated content), off-brief actions
 - Cost: model, approximate tokens or turns per agent
+## Recovery (if interruptions were used)
+slot | agent | sent | answered | latency | correct | resumed unprompted | next task msg after | lost context / duplicate work
 ## Outcome
 Deliverable (verbatim or summarized), agreement state
 ## Score (rubric in EXPERIMENT.md)
