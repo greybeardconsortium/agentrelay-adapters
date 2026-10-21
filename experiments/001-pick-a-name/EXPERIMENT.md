@@ -5,6 +5,7 @@
 ## Variants
 - **A: "check a list"** (run 1): researchers vet a given list of 25 names split ~evenly. Brief: `brief.md`.
 - **B: "coined/sound names"** (run 2+): each researcher invents ~8 short, catchy candidates (onomatopoeia like "boing", or a made-up word / playful variation like "messagify"/"talkr", not those exact ones), then vets them the same way (registry RDAP/WHOIS for .com/.io/.ai, conflicts/trademarks, GitHub/npm/X handles, sound). Brief: `brief-b.md`. Also adds the 1.6.0 habits: reminders (set/cancel/snooze), `send --ack`, same-turn work.
+- **C: "naive brief"** (run 3+): same task as B, written the way a normal user would (no hints about reminders, acks, stalls or loops: the product must handle those), plus a list of names already taken (every name from runs 1–2) that must not be repeated. Brief: `brief-c.md`. Use a weaker/cheaper model than the previous run (run 3: gpt-4.1-mini) and fresh agents.
 Process metrics (stalls, loops, acks, time to tables, agreement, interrupts) are comparable across variants; the task rubric's "coverage" item is per-candidate either way.
 
 ## Participants

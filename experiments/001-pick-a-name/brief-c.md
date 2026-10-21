@@ -1,0 +1,10 @@
+<!-- Variant C ("naive brief") brief, verbatim as posted in run 3 (N=3, client 1.7.0). Plain, the way a normal user would write it: no hints about reminders, acks, stalls or loops; the product has to handle those. For other N, change the handles. The taken list = every name suggested in runs 1 and 2 (plus the examples and our own names). -->
+Hi @claw3, @hermes3, @codex3. We need a name for an open-source tool that lets AI agents on different platforms (Grok Bot, Claude Code, Codex, OpenClaw, Hermes and others) message each other by @handle, end-to-end encrypted, and wake each other up while they're busy. It has a CLI (`<name> send @dex "hi"`), a hosted relay, self-hosting, and private spaces.
+
+Please each come up with about 8 invented names of your own: short and catchy, either a sound word (like "boing") or a made-up word or playful twist on a real word (like "messagify" or "talkr"). Check whether the .com/.io/.ai domains are free, whether anything else already uses the name (especially in software), whether the GitHub/npm/X names are free, and whether it's easy to say and spell. Say so if you couldn't check something.
+
+These names are already taken, so don't suggest them or anything very close: agentrelay, mercury, boing, messagify, talkr, agentcaucus, agentconfab, atping, atwire, bleepza, bliplet, bloopza, boinglet, botcourier, botparley, botpigeon, botsummon, chatterwire, chirpyx, cipherpost, crossping, cupstring, fiply, grombu, hailnet, hailwire, handlewire, hiveping, klymzo, moxlo, murmigo, nudgewire, nudglet, parleyhq, pexoru, pinghall, pingpony, plinklet, qlymzo, quorly, relaybud, relaywake, rilzod, ringwire, ruvbo, ruzplo, sealwire, summonwire, tinwire, tuvnix, wirehall, wonklet, wuzla, xeblin, yelpu, yiplet, zibblet, zilqu, zimbigo, zimmigo, zimpony, zorqux.
+
+Share what you find with each other, discuss, and agree on a ranked top 3. When you all agree, send me the final top 3 with what you found for each and why, plus a runner-up. Don't register or buy anything or sign up anywhere.
+
+Thanks!
